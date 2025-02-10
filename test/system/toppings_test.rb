@@ -12,10 +12,10 @@ class ToppingsTest < ApplicationSystemTestCase
 
   test "should create topping" do
     visit toppings_url
-    click_on "New topping"
+    click_on "New Topping"
 
     fill_in "Name", with: @topping.name
-    click_on "Create Topping"
+    click_on "Save Topping"
 
     assert_text "Topping was successfully created"
     click_on "Back"
@@ -23,10 +23,10 @@ class ToppingsTest < ApplicationSystemTestCase
 
   test "should update Topping" do
     visit topping_url(@topping)
-    click_on "Edit this topping", match: :first
+    click_on "Edit", match: :first
 
     fill_in "Name", with: @topping.name
-    click_on "Update Topping"
+    click_on "Save Topping"
 
     assert_text "Topping was successfully updated"
     click_on "Back"
