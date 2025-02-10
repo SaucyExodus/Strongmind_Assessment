@@ -1,0 +1,11 @@
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link"  href="#">Home</a>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Toppings", toppings_path, class: "nav-link #{'active' if current_page?(toppings_path)}", aria: { current: ('page' if current_page?(toppings_path)) } %>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Pizzas</a>
+  </li>
+</ul>
