@@ -1,0 +1,31 @@
+<% content_for :title, "Toppings" %>
+
+<h1>Toppings List</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @toppings.each do |topping| %>
+      <tr>
+        <td><%= topping.name %></td>
+        <td>
+          <%= link_to "Show", topping, class: "btn btn-primary btn-sm" %>
+          <%= link_to "Edit", edit_topping_path(topping), class: "btn btn-warning btn-sm" %>
+          <%= button_to "Delete", topping, 
+            method: :delete, 
+            data: { turbo_confirm: "Are you sure you want to delete this topping? \n\n#{topping.name}" }, 
+            class: "btn btn-danger btn-sm", 
+            form: { style: "display: inline;" } 
+          %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New Topping", new_topping_path, class: "btn btn-success" %>
