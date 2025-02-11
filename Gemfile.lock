@@ -363,6 +363,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   brakeman
+  bundler (~> 2.6, >= 2.6.3)
   capybara
   debug
   importmap-rails
@@ -385,4 +386,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   2.6.2
+   2.6.3
