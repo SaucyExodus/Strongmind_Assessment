@@ -13,10 +13,12 @@ class PizzasController < ApplicationController
   # GET /pizzas/new
   def new
     @pizza = Pizza.new
+    @toppings = Topping.all
   end
 
   # GET /pizzas/1/edit
   def edit
+    @toppings = Topping.all
   end
 
   # POST /pizzas or /pizzas.json
@@ -65,6 +67,6 @@ class PizzasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pizza_params
-      params.expect(pizza: [ :name ])
+      params.expect(pizza: [ :name, topping_ids: [] ])
     end
 end
