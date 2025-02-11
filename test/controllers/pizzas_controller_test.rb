@@ -3,6 +3,7 @@ require "test_helper"
 class PizzasControllerTest < ActionDispatch::IntegrationTest
   setup do
     @pizza = pizzas(:one)
+    @topping = toppings(:one)
   end
 
   test "should get index" do
@@ -17,7 +18,10 @@ class PizzasControllerTest < ActionDispatch::IntegrationTest
 
   test "should create pizza" do
     assert_difference("Pizza.count") do
-      post pizzas_url, params: { pizza: { name: @pizza.name } }
+      post pizzas_url, params: { pizza: {
+        name: "Cheese Pizza",
+        topping_ids: [ @topping.id ]
+      } }
     end
 
     assert_redirected_to pizza_url(Pizza.last)

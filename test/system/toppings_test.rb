@@ -7,7 +7,7 @@ class ToppingsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit toppings_url
-    assert_selector "h1", text: "Toppings"
+    assert_selector "h1", text: "Topping List"
   end
 
   test "should create topping" do
