@@ -14,7 +14,7 @@ class ToppingsTest < ApplicationSystemTestCase
     visit toppings_url
     click_on "New Topping"
 
-    fill_in "Name", with: @topping.name
+    fill_in "Name", with: "UniqueTopping#{SecureRandom.hex(4)}"
     click_on "Save Topping"
 
     assert_text "Topping was successfully created"
@@ -34,7 +34,9 @@ class ToppingsTest < ApplicationSystemTestCase
 
   test "should destroy Topping" do
     visit topping_url(@topping)
-    click_on "Destroy this topping", match: :first
+    accept_alert do
+      click_on "Delete", match: :first
+    end
 
     assert_text "Topping was successfully destroyed"
   end

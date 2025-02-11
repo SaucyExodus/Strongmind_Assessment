@@ -17,7 +17,7 @@ class ToppingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create topping" do
     assert_difference("Topping.count") do
-      post toppings_url, params: { topping: { name: @topping.name } }
+      post toppings_url, params: { topping: { name: "UniqueTopping#{SecureRandom.hex(4)}" } }
     end
 
     assert_redirected_to topping_url(Topping.last)
